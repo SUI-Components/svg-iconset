@@ -34,36 +34,36 @@ import { Filterbuilding, Filtercommercial } from '@schibstedspain/sui-svgiconset
 
 const MyComponent = (props) => {
   return (
-    <Building size={32} strokeColor='#b00b55' svgClass='MySVGicon' />
+    <Accountlogin size={32} strokeColor='#b00b55' svgClass='MySVGicon' />
   )
 }
 ```
 
 ### Some available icons
 
-- login
-- logout
-- undo
-- redo
-- left
-- center
-- right
-- aperture
-- bottomright
-- bottomleft
-- topright
-- topleft
-- leftbottom
-- right-bottom
-- left-top
-- right-top
-- fill
-- fillacute
-- fillangled
-- line
+- Accountlogin
+- Accountlogout
+- Actionundo
+- Actionredo
+- Alignleft
+- Aligncenter
+- Alignright
+- Aperture
+- Arrowbottom
+- Arrowcirclebottom
+- Arrowcircleleft
+- Arrowcircleright
+- Arrowcircletop
+- Arrowleft
+- Arrowright
+- Arrowthickleft
+- Arrowthickright
+- Arrowthicktop
+- Arrowtop
+- Audio
 - ...
 
-Checkout demo page for full list
+Checkout [demo page](https://sui-components.github.io/svg-iconset/) for full list
 
 ### Current set of supported SVG attributes:
 
