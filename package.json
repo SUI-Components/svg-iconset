@@ -1,7 +1,7 @@
 {
-  "name": "@schibstedspain/fotocasa-iconset",
+  "name": "@schibstedspain/sui-svgiconset",
   "version": "1.0.2",
-  "description": "ReactJS SVG Fotocasa iconset",
+  "description": "ReactJS SUI SVG iconset",
   "main": "lib/",
   "scripts": {
     "prebuild": "npm run clean:components -s",
@@ -13,6 +13,9 @@
     "prepublish": "npm run build",
     "lint": "npm run lint:js && npm run lint:sass",
     "predoc": "rimraf ./docs/lib/*",
+    "doc": "npm run build && npm run doc:copy && npm run doc:publish",
+    "doc:copy": "copyfiles ./lib/* ./docs/",
+    "doc:publish": "gh-pages -d docs",
     "compile": "babel components --out-dir lib",
     "phoenix": "rimraf ./node_modules/ && npm install",
     "lint:js": "node_modules/.bin/eslint --ext .js,.jsx src/",
