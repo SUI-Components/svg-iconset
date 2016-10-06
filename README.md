@@ -30,7 +30,7 @@ Each ReactJS SVG component allows the following params:
 - install npm package: `npm i -S @schibstedspain/sui-svgiconset`
 - import needed icons:
 ```
-import { Filterbuilding, Filtercommercial } from '@schibstedspain/sui-svgiconset'
+import { Accountlogin, Accountlogout } from '@schibstedspain/sui-svgiconset'
 
 const MyComponent = (props) => {
   return (
