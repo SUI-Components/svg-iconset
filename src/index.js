@@ -5,6 +5,7 @@ const fs = require('fs')
 const path = require('path')
 const svgFolder = path.join(__dirname, '../svg')
 const componentFolder = path.join(__dirname, '../components')
+const listOfNamesFolder = path.join(__dirname, '../docs')
 const log = console.log
 
 const ENCODING = 'utf-8'
@@ -90,6 +91,24 @@ function indexedSvgComponents (components) {
   return output(imports.join('\n'), components.join(','))
 }
 
+function componentsNameList (components) {
+  const insertName = component => {
+    return (
+          ` '${component}'`
+    )
+  }
+
+  const listOfNames = components.map(component => insertName(component))
+  log(listOfNames)
+  return (
+    `module.exports = {
+      componentsList: [
+        ${listOfNames}
+      ]
+    }`
+  )
+}
+
 function stripSvg (svg) {
   return svg.replace(/<svg.*?>/, '').replace(/<\/svg>/, '')
 }
@@ -119,6 +138,7 @@ fs.readdir(svgFolder, function (err, files) {
   files = files.filter(file => IGNORED_FILES.indexOf(file) === -1)
   const prettyfiedFiles = files.map(file => toClassName(file))
   const indexText = indexedSvgComponents(prettyfiedFiles)
+  const nameList = componentsNameList(prettyfiedFiles)
 
   if (err) {
     log(err)
@@ -126,6 +146,7 @@ fs.readdir(svgFolder, function (err, files) {
 
   ensureDirectoryExistence(componentFolder)
   const pathComponents = path.join(componentFolder, 'index.js')
+  const pathListOfNames = path.join(listOfNamesFolder, 'componentsList.js')
 
   fs.writeFile(pathComponents, indexText, ENCODING, function (err) {
     log('index.js wrote')
@@ -134,10 +155,15 @@ fs.readdir(svgFolder, function (err, files) {
     }
   })
 
+  fs.writeFile(pathListOfNames, nameList, ENCODING, function (err) {
+    if (err) {
+      log(err)
+    }
+  })
+
   files.forEach(function (file) {
     fs.readFile(path.join(svgFolder, file), function (err, contents) {
       log(`read svg file ${file}`)
-
       if (err) {
         log(err)
         return

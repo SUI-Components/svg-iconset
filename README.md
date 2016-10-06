@@ -61,7 +61,10 @@ const MyComponent = (props) => {
 - Arrowthicktop
 - Arrowtop
 - Audio
-- ...
+- Audiospectrum
+- Badge
+- Ban
+
 
 Checkout [demo page](https://sui-components.github.io/svg-iconset/) for full list
 
