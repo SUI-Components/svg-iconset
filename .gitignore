@@ -67,6 +67,7 @@ Temporary Items
 .tmp/
 dist/
 /lib/
+docs/lib
 
 ### eslint ###
 .editorconfig
