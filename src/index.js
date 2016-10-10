@@ -93,7 +93,6 @@ function indexedSvgComponents (components) {
 
 function componentsNameList (components) {
   const insertName = component => ` '${component}'`
-
   const listOfNames = components.map(component => insertName(component))
   log(listOfNames)
   return (
