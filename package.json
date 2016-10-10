@@ -14,7 +14,7 @@
     "doc:copy": "copyfiles ./dist/* ./docs/",
     "doc:publish": "gh-pages -d docs",
     "prelib": "npm run clean:lib -s",
-    "lib": "npm run lib:scripts && npm run lib:styles",
+    "lib": "npm run lib:scripts",
     "lib:scripts": "babel src --out-dir lib",
     "start": "node src/index.js && npm run start:open && npm run start:server",
     "start:server": "webpack-dev-server",
