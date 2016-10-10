@@ -1,29 +1,6 @@
 import React, { Component, PropTypes } from 'react'
+import { componentsList } from './componentsList.js'
 import ReactDom from 'react-dom'
-
-// TODO: Automatize this array to include in Docs page all components from SVG folder dinamically
-const iconlist = [
-  'Accountlogin',
-  'Accountlogout',
-  'Actionundo',
-  'Actionredo',
-  'Alignleft',
-  'Aligncenter',
-  'Alignright',
-  'Aperture',
-  'Arrowbottom',
-  'Arrowcirclebottom',
-  'Arrowcircleleft',
-  'Arrowcircleright',
-  'Arrowcircletop',
-  'Arrowleft',
-  'Arrowright',
-  'Arrowthickleft',
-  'Arrowthickright',
-  'Arrowthicktop',
-  'Arrowtop',
-  'Audio'
-]
 
 class FotocasaIconset extends Component {
   render () {
@@ -36,7 +13,7 @@ class FotocasaIconset extends Component {
             size={128}
             fillColor='#b00b55'
             strokeColor='black'
-            strokeWidth='.1px'
+            strokeWidth={0}
             svgClass='MySVGicon'
           />
           <span>{item}</span>
@@ -52,7 +29,7 @@ class FotocasaIconset extends Component {
   }
 }
 
-ReactDom.render(<FotocasaIconset iconlist={iconlist} />,
+ReactDom.render(<FotocasaIconset iconlist={componentsList} />,
   document.getElementById('main')
 )
 
