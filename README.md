@@ -22,7 +22,9 @@ This repository is a SVG file format to ReactJS component builder based on [Open
 
 Each ReactJS SVG component allows the following params:
 - **size** : A *number* without units is expected. Default value **32**
-- **color** : A *string* in any CSS color format ('red', '#f00', 'rgba(255,0,0,.5)')
+- **fillColor** : A *string* in any CSS color format ('red', '#f00', 'rgba(255,0,0,.5)') to set `fill` SVG property.
+- **strokeColor** : A *string* in any CSS color format ('red', '#f00', 'rgba(255,0,0,.5)') to set `stroke` SVG property.
+- **strokeWidth** : A *number* including decimal values to set `stroke-width` SVG property.
 - **svgClass** : A *string* to specify a custom class for layout purposes.
 
 ### Installation
@@ -34,7 +36,13 @@ import { Accountlogin, Accountlogout } from '@schibstedspain/sui-svgiconset'
 
 const MyComponent = (props) => {
   return (
-    <Accountlogin size={32} strokeColor='#b00b55' svgClass='MySVGicon' />
+    <Accountlogin
+        size={32}
+        fillColor='#b00b55'
+        strokeColor='black'
+        strokeWidth={0}
+        svgClass='sui-SVGicon'
+    />
   )
 }
 ```
@@ -50,20 +58,7 @@ const MyComponent = (props) => {
 - Alignright
 - Aperture
 - Arrowbottom
-- Arrowcirclebottom
-- Arrowcircleleft
-- Arrowcircleright
-- Arrowcircletop
-- Arrowleft
-- Arrowright
-- Arrowthickleft
-- Arrowthickright
-- Arrowthicktop
-- Arrowtop
-- Audio
-- Audiospectrum
-- Badge
-- Ban
+[...]
 
 
 Checkout [demo page](https://sui-components.github.io/svg-iconset/) for full list
