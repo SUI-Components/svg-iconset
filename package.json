@@ -30,6 +30,9 @@
   },
   "author": "David Garcia",
   "license": "ISC",
+  "peerDependencies": {
+    "react": "0.14 || 15.3"
+  },
   "devDependencies": {
     "@schibstedspain/frontend-pre-commit-rules": "7.0",
     "babel-cli": "6.14.0",
@@ -41,15 +44,13 @@
     "copyfiles": "1.0.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "opener": "1.4.2",
+    "react": "15.3",
     "react-hot-loader": "3.0.0-beta.4",
     "rimraf": "2.5.4",
     "svg-inline-loader": "0.6.1",
     "webpack": "1.13.2",
     "webpack-dev-server": "1.15.2",
     "webpack-merge": "0.14.1"
-  },
-  "dependencies": {
-    "react": "15.3.1"
   },
   "pre-commit": [
     "lint",
