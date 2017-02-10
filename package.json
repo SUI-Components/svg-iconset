@@ -45,6 +45,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "opener": "1.4.2",
     "react": "15.3",
+    "react-dom": "15",
     "react-hot-loader": "3.0.0-beta.4",
     "rimraf": "2.5.4",
     "svg-inline-loader": "0.6.1",
@@ -55,5 +56,8 @@
   "pre-commit": [
     "lint",
     "test"
-  ]
+  ],
+  "dependencies": {
+    "react": "^15.3.2"
+  }
 }
