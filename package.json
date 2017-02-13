@@ -42,10 +42,10 @@
     "babel-preset-stage-1": "6.16.0",
     "camelcase": "3.0.0",
     "copyfiles": "1.0.0",
-    "extract-text-webpack-plugin": "^1.0.1",
+    "extract-text-webpack-plugin": "1.0.1",
     "opener": "1.4.2",
     "react": "15.3",
-    "react-dom": "15",
+    "react-dom": "15.4.2",
     "react-hot-loader": "3.0.0-beta.4",
     "rimraf": "2.5.4",
     "svg-inline-loader": "0.6.1",
@@ -58,6 +58,6 @@
     "test"
   ],
   "dependencies": {
-    "react": "^15.3.2"
+    "react": "15.3"
   }
 }
