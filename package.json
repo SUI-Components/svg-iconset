@@ -1,6 +1,6 @@
 {
   "name": "@schibstedspain/sui-svgiconset",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "ReactJS SUI SVG iconset",
   "main": "lib/",
   "scripts": {
