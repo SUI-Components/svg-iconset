@@ -44,12 +44,12 @@ function template (className, body) {
 
       return (
         <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width={size}
+          className={svgClass}
           height={size}
           style={inlineStyling}
-          className={svgClass}
           viewBox='${viewBox(body)}'
+          width={size}
+          xmlns='http://www.w3.org/2000/svg'
         >
           ${stripSvg(body)}
         </svg>
