@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { componentsList } from './componentsList.js'
 import ReactDom from 'react-dom'
 
@@ -32,7 +32,3 @@ class FotocasaIconset extends Component {
 ReactDom.render(<FotocasaIconset iconlist={componentsList} />,
   document.getElementById('main')
 )
-
-FotocasaIconset.propTypes = {
-  iconlist: PropTypes.array
-}
