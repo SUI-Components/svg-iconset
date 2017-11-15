@@ -28,7 +28,7 @@
   "author": "David Garcia",
   "license": "ISC",
   "peerDependencies": {
-    "react": "0.14 || 15"
+    "react": "0.14 || 15 || 16"
   },
   "devDependencies": {
     "@schibstedspain/frontend-pre-commit-rules": "7.0",
