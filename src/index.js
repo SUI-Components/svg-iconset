@@ -32,10 +32,9 @@ const SVG_ATTRIBUTES = [
 ]
 
 function template (className, body) {
-  return `
-    import React from 'react'
+  return `import React from 'react'
 
-    export default function ${className} ({ size, strokeColor, strokeWidth, fillColor, svgClass }) {
+    export default function ({ size = 32, strokeColor = 'blue', strokeWidth = 0, fillColor = '#bada55', svgClass = 'sui-SVGicon' }) {
       const inlineStyling = {
           fill: fillColor,
           stroke: strokeColor,
@@ -54,14 +53,6 @@ function template (className, body) {
           ${stripSvg(body)}
         </svg>
       )
-    }
-
-    ${className}.defaultProps = {
-      strokeColor: 'blue',
-      strokeWidth: 0,
-      fillColor: '#bada55',
-      size: 32,
-      svgClass: 'sui-SVGicon'
     }
   `
 }
