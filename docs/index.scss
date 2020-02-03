@@ -1,0 +1,106 @@
+$c-icon-fill: #777777;
+$w-icon-stroke: 0px;
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff;
+  color: #333;
+  font-family: system-ui, sans-serif;
+  font-weight: 100;
+  padding: 24px;
+}
+
+h1 {
+  font-weight: 100;
+  margin: 24px 0;
+}
+
+h2 {
+  font-weight: 100;
+  margin: 16px 0;
+}
+
+.icon-list {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.icon-item {
+  display: block;
+  flex: 0 0 auto;
+  margin: 4px;
+  padding: 16px;
+}
+
+.icon-item span {
+  color: #ffffff;
+  display: block;
+  font-size: 14px;
+  text-align: center;
+}
+
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+[data-tooltip]:before,
+[data-tooltip]:after {
+  left: 0;
+  margin: 0 auto;
+  opacity: 0;
+  pointer-events: none;
+  right: 0;
+  visibility: hidden;
+}
+
+[data-tooltip]:before {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 2px;
+  bottom: 100%;
+  color: #fff;
+  content: attr(data-tooltip);
+  font-size: 10px;
+  line-height: 1.2;
+  margin-bottom: 5px;
+  overflow: hidden;
+  padding: 4px 8px;
+  position: absolute;
+  text-align: center;
+  text-overflow: ellipsis;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid rgba(0, 0, 0, 0.6);
+  bottom: 100%;
+  content: '';
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  width: 0;
+}
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  opacity: 1;
+  visibility: visible;
+}

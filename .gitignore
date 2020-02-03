@@ -78,3 +78,4 @@ COMMANDS
 
 ### components
 components/
+.cache/
