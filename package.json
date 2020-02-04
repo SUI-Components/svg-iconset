@@ -4,26 +4,19 @@
   "description": "ReactJS SUI SVG iconset",
   "main": "lib/",
   "scripts": {
+    "build": "npm run prebuild && node src/index.js && copyfiles -u 1 src/*.scss lib && npm run compile",
     "clean:components": "rimraf ./components/*",
-    "clean:dist": "rimraf ./dist/*",
-    "clean:lib": "rimraf ./lib/*",
-    "predist": "npm run clean:dist -s",
-    "dist": "webpack",
-    "prepublish": "npm run build && npm run compile",
-    "prebuild": "npm run clean:components -s",
-    "build": "node src/index.js",
-    "start": "npm run build && npm run compile && npm run start:open && npm run start:server",
-    "start:server": "webpack-dev-server",
-    "start:open": "opener http://localhost:8080",
     "compile": "babel components --out-dir lib",
-    "predoc": "rimraf ./docs/dist/* && npm run build && npm run compile",
-    "doc": "npm run dist && npm run doc:copy && npm run doc:publish",
-    "doc:copy": "copyfiles -u 1 ./dist/* ./docs/dist",
-    "doc:publish": "gh-pages -d docs",
-    "phoenix": "rimraf ./node_modules/ && npm install",
     "lint": "npm run lint:js && npm run lint:sass",
-    "lint:js": "node_modules/.bin/eslint --ext .js,.jsx src/",
-    "lint:sass": "node_modules/.bin/sass-lint src/**/*.scss -c -v"
+    "lint:js": "sui-lint js --fix",
+    "lint:sass": "sui-lint scss --fix",
+    "phoenix": "rimraf ./node_modules/ && npm install",
+    "prebuild": "npm run clean:components -s",
+    "predoc": "rimraf ./docs/lib/*",
+    "prepublish": "npm run build",
+    "start": "npm run build && npm run start:open && npm run start:server",
+    "start:open": "opener http://localhost:1234",
+    "start:server": "parcel ./docs/index.html"
   },
   "author": "David Garcia",
   "license": "ISC",
@@ -31,28 +24,37 @@
     "react": "0.14 || 15 || 16"
   },
   "devDependencies": {
-    "@schibstedspain/frontend-pre-commit-rules": "7.0",
-    "babel-cli": "6.14.0",
-    "babel-loader": "6.2.5",
-    "babel-preset-es2015": "6.14.0",
-    "babel-preset-react": "6.11.1",
-    "babel-preset-stage-1": "6.16.0",
-    "camelcase": "3.0.0",
-    "copyfiles": "1.0.0",
-    "extract-text-webpack-plugin": "1.0.1",
-    "gh-pages": "1.0.0",
-    "opener": "1.4.2",
+    "@babel/cli": "7.8.4",
+    "@babel/core": "7.8.4",
+    "@s-ui/lint": "3",
+    "babel-loader": "8.0.6",
+    "babel-preset-sui": "3",
+    "camelcase": "5.3.1",
+    "copyfiles": "2.2.0",
+    "opener": "1.5.1",
+    "parcel-bundler": "1.12.4",
+    "prop-types": "15.7.2",
     "react": "16.12.0",
     "react-dom": "16.12.0",
-    "react-hot-loader": "3.0.0-beta.4",
-    "rimraf": "2.5.4",
-    "svg-inline-loader": "0.6.1",
-    "webpack": "1.13.2",
-    "webpack-dev-server": "1.15.2",
-    "webpack-merge": "0.14.1"
+    "rimraf": "3.0.1",
+    "sass": "1.25.0"
+  },
+  "babel": {
+    "presets": [
+      "sui"
+    ]
   },
   "pre-commit": [
     "lint",
     "test"
-  ]
+  ],
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/@s-ui/lint/eslintrc.js"
+    ]
+  },
+  "prettier": "./node_modules/@s-ui/lint/.prettierrc.js",
+  "stylelint": {
+    "extends": "./node_modules/@s-ui/lint/stylelint.config.js"
+  }
 }
