@@ -1,5 +1,5 @@
 {
-  "name": "@schibstedspain/sui-svgiconset",
+  "name": "@s-ui/react-icons",
   "version": "1.7.1",
   "description": "ReactJS SUI SVG iconset",
   "main": "lib/",
