@@ -1,6 +1,6 @@
 {
   "name": "@s-ui/react-icons",
-  "version": "1.7.1",
+  "version": "1.8.0",
   "description": "ReactJS SUI SVG iconset",
   "main": "lib/",
   "scripts": {
