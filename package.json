@@ -21,7 +21,7 @@
   "author": "David Garcia",
   "license": "ISC",
   "peerDependencies": {
-    "react": "0.14 || 15 || 16"
+    "react": "0.14 || 15 || 16 || 17"
   },
   "devDependencies": {
     "@babel/cli": "7.8.4",
@@ -32,10 +32,10 @@
     "camelcase": "5.3.1",
     "copyfiles": "2.2.0",
     "opener": "1.5.1",
-    "parcel-bundler": "1.12.4",
+    "parcel-bundler": "1.12.5",
     "prop-types": "15.7.2",
-    "react": "16.12.0",
-    "react-dom": "16.12.0",
+    "react": "17",
+    "react-dom": "17",
     "rimraf": "3.0.1",
     "sass": "1.25.0"
   },
