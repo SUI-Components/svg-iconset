@@ -1,6 +1,6 @@
 {
   "name": "@s-ui/react-icons",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "ReactJS SUI SVG iconset",
   "main": "lib/",
   "scripts": {
@@ -13,7 +13,7 @@
     "phoenix": "rimraf ./node_modules/ && npm install",
     "prebuild": "npm run clean:components -s",
     "predoc": "rimraf ./docs/lib/*",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "start": "npm run build && npm run start:open && npm run start:server",
     "start:open": "opener http://localhost:1234",
     "start:server": "parcel ./docs/index.html"
